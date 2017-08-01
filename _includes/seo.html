@@ -1,0 +1,35 @@
+{% comment %}
+    <meta name="author"             content="Stavros Lomvardas">
+{% endcomment %}
+    <meta name="description"        content="Aphrodite | Lomvardas Lab @ Zuckerman Institute" >
+
+    <!-- Open Graph data -->
+    <meta property="og:title"       content="Aphrodite | Lomvardas Lab" >
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://aphrodite.zi.columbia.edu:4000/" />
+    <meta property="og:image"       content="https://aphrodite.zi.columbia.edu:4000/assets/img/aphrodite_bust.svg" >
+    <meta property="og:description" content= "Aphrodite | Lomvardas Lab @ Zuckerman Institute" >
+
+    <!-- Twitter Card data -->
+    {% comment %}
+    This section uses variables set in frontmatter: twitter_summary, twitter_author, title
+    {% endcomment %}
+
+    {% if page.twitter_summary %}
+      <meta name="twitter:card" content="{{ page.twitter_summary }}">
+    {% else %}
+      <meta name="twitter:card" content="{{ site.title }} | {{ site.title_subtitle }}">
+    {% endif %}
+    <meta name="twitter:site" content="@AphroditeServer">
+    {% if page.title %}
+      <meta name="twitter:title" content="{{ site.title }} | {{ site.title_subtitle }}: {{ page.title }}">
+    {% else %}
+      <meta name="twitter:title" content="{{ site.title }} | {{ site.title_subtitle }}">
+    {% endif %}
+    <meta name="twitter:description" content="Aphrodite | Lomvardas Lab @ Zuckerman Institute">
+    {% if page.twitter_author %}
+      <meta name="twitter:creator" content="{{ page.twitter_author }}">
+    {% endif %}
+
+    <-- Twitter Summary card images must be at least 120x120px -->
+    <meta name="twitter:image" content="https://aphrodite.zi.columbia.edu:4000/assets/img/aphrodite_bust_twitter.svg">
