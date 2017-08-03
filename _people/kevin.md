@@ -1,8 +1,5 @@
 ---
-# layout: people_profile
 layout: people/postdoc_fellow
-
-type: postdoc_fellow
 
 name: Kevin Monahan, PhD
 image: /assets/img/kevin_monahan.jpg

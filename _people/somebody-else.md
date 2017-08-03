@@ -1,11 +1,10 @@
 ---
-layout: people/people_profile
-title: else
-
-type: grad_student
+layout: people/postdoc_fellow
 
 name: Someone Else
 image: /assets/img/kevin_monahan.jpg
+slug: else
+
 degree: PhD '11, Maniatis Lab, Columbia University
 email: kevin.monahan (at) ucsf.edu
 research_interests: ''

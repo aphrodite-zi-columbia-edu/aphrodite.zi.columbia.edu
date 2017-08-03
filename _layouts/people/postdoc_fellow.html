@@ -40,23 +40,24 @@ scripts:
 {% if page.research_interests %}
 <p>Research Interests: {{ page.research_interests }}</p>
 {% endif %}
+
 {% if page.publications %}
   {{ page.publications_name }}'s <a href="{{ page.publications }}">publications.</a>
 {% endif %}
 
 {% if page.selected_publications %}
-  <script>
-    $( document ).ready(function() {
-      var s = document.createElement('style');
-      s.innerText = ".highlight { font-weight: bold; }";
-      document.getElementsByTagName('head')[0].append(s);
-      $('#selected-publications').highlight('{{ page.selected_publication_attribute }}');
-    });
-  </script>
-  <div id="selected-publications">
-    <p>Selected Publications:</p>
-    {% for publication in page.selected_publications %}
-      <p class="selected-publication">{{ publication }}</p>
-    {% endfor %}
-  </div>
+<script>
+  $( document ).ready(function() {
+    var s = document.createElement('style');
+    s.innerText = ".highlight { font-weight: bold; }";
+    document.getElementsByTagName('head')[0].append(s);
+    $('#selected-publications').highlight('{{ page.selected_publication_attribute }}');
+  });
+</script>
+<div id="selected-publications">
+  <p>Selected Publications:</p>
+  {% for publication in page.selected_publications %}
+    <p class="selected-publication">{{ publication }}</p>
+  {% endfor %}
+</div>
 {% endif %}
