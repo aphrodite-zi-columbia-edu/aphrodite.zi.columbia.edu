@@ -8,6 +8,7 @@ scripts:
 ###
  # This profile takes parameters:
  # 
+ # grad_program:  # the bit that qualifies 'Grad Student, %HERE%' (see below)
  # degree: BS '10, This text also rendered as given
  # email: example (at) columbia.edu
  # research_interests: ''  # optional i guess?
@@ -32,7 +33,7 @@ scripts:
 ---
 
 <p>
-  Graduate Student{% if page.grad_program %}, {{ page.grad_program }}{% endif %}, <br />
+  Graduate Student{% if page.grad_program %}, {{ page.grad_program }}{% endif %}<br />
   {{ page.degree }}
 </p>
 <p>Email: {{ page.email }}</p>
