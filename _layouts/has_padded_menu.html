@@ -31,22 +31,25 @@ layout: document
 
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Postdoctoral Fellows</li>
-                  {% assign postdocs = site.people | where_exp: "person", "person.layout == 'people/postdoc_fellow'" %}
-                  {% for person in postdocs %}
+                  {% assign people = site.people | where_exp: "person", "person.layout == 'people/postdoc_fellow'" %}
+                  {% assign people = people | sort: 'slug' %}
+                  {% for person in people %}
                     <li><a href="{{ person.url }}">{{ person.name }}</a></li>
                   {% endfor %}
 
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Graduate Students</li>
-                  {% assign postdocs = site.people | where_exp: "person", "person.layout == 'people/grad_student'" %}
-                  {% for person in postdocs %}
+                  {% assign people = site.people | where_exp: "person", "person.layout == 'people/grad_student'" %}
+                  {% assign people = people | sort: 'slug' %}
+                  {% for person in people %}
                     <li><a href="{{ person.url }}">{{ person.name }}</a></li>
                   {% endfor %}
 
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Research Associates / Other</li>
-                  {% assign postdocs = site.people | where_exp: "person", "person.layout == 'people/research_other'" %}
-                  {% for person in postdocs %}
+                  {% assign people = site.people | where_exp: "person", "person.layout == 'people/research_other'" %}
+                  {% assign people = people | sort: 'slug' %}
+                  {% for person in people %}
                     <li><a href="{{ person.url }}">{{ person.name }}</a></li>
                   {% endfor %}
 
