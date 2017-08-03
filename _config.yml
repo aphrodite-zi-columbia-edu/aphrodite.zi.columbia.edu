@@ -23,6 +23,11 @@ title_subtitle           : "Aphrodite Server"
 author:
   name                   : "David Ankin"
 
+collections:
+  people:
+    output: true
+    permalink: /:collection/:title/
+
 # Build settings
 markdown: kramdown
 gems:

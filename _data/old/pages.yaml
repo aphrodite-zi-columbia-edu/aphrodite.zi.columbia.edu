@@ -1,0 +1,38 @@
+###
+ # This information ripped from http://lomvardaslab.ucsf.edu/
+ # 
+ # Usage:
+ # <ul>
+ # {% for page in site.data.old.pages %}
+ #   <li>{{ page.name }}</li>
+ # {% endfor %}
+ # </ul>
+ # 
+ # 
+ # 
+ # 
+ # 
+ ##
+- name: 'Publications'
+  page: 'publications.html'
+
+- name: 'People'
+  page: 'people.html'
+
+- name: 'Research'
+  page: 'index.html'
+
+- name: 'About Stavros'
+  page: 'about-stavros.html'
+
+# - name: 'Event Calendar'
+#   page: 'ucsf-event-calendar.html'
+
+- name: 'Want to Volunteer?'
+  page: 'want-to-volunteer.html'
+
+- name: 'Contact Us'
+  page: 'contact-us.html'
+
+- name: 'Links'
+  page: 'links.html'

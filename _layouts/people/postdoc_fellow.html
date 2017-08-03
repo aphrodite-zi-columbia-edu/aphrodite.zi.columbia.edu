@@ -1,0 +1,62 @@
+---
+layout: people/people_profile
+
+scripts:
+  - comment: to bold names in publications
+    src: /assets/components/jquery-highlight/jquery.highlight.js
+
+###
+ # This profile takes parameters:
+ # 
+ # degree: PhD '11, This text also rendered as given
+ # email: example (at) columbia.edu
+ # research_interests: ''  # optional i guess?
+ # 
+ # # Publications:
+ # 
+ # selected_publications:
+ #   - >
+ #      This text is multiline here so it can be readable
+ #      but it will render as a single line on the site, and
+ #      indentation will be removed, as long as the next line
+ #      lines up like these. (Google 'yaml' for more information)
+ # selected_publication_attribute:  # this text to be bold in all above
+ #                                  # citations.
+ # 
+ # OR
+ # 
+ # publications: link
+ # publications_name: attribution
+ # 
+ ##
+---
+
+<p>
+  Postdoctural Fellow<br />
+  {{ page.degree }}
+</p>
+<p>Email: {{ page.email }}</p>
+
+{% if page.research_interests %}
+<p>Research Interests: {{ page.research_interests }}</p>
+{% endif %}
+{% if page.publications %}
+  {{ page.publications_name }}'s <a href="{{ page.publications }}">publications.</a>
+{% endif %}
+
+{% if page.selected_publications %}
+  <script>
+    $( document ).ready(function() {
+      var s = document.createElement('style');
+      s.innerText = ".highlight { font-weight: bold; }";
+      document.getElementsByTagName('head')[0].append(s);
+      $('#selected-publications').highlight('{{ page.selected_publication_attribute }}');
+    });
+  </script>
+  <div id="selected-publications">
+    <p>Selected Publications:</p>
+    {% for publication in page.selected_publications %}
+      <p class="selected-publication">{{ publication }}</p>
+    {% endfor %}
+  </div>
+{% endif %}

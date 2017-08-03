@@ -1,0 +1,21 @@
+{
+  "name": "aphrodite-server-lomvardas-lab",
+  "homepage": "https://aphrodite.zi.columbia.edu/",
+  "authors": [
+    "Dave Ankin <alexanderankin@gmail.com>"
+  ],
+  "description": "Static landing page for Aphrodite Server in Lomvardas Lab",
+  "main": "",
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-highlight": "^3.4.0"
+  }
+}

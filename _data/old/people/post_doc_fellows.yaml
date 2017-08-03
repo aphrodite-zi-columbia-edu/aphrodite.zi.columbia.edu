@@ -1,0 +1,88 @@
+###
+ # Usage of stuff in this file as follows:
+ # 
+ # {% for person in site.data.old.people.post_doc_fellows %}
+ #   <h1>{{ person.name }}</h1>
+ #   <p>{{ person.degree }}</p>
+ #   <p>Email: {{ person.email }}</p>
+ # 
+ #   {% if person.publications %}
+ #     {{ person.name }}'s <a href="{{ person.publications }}">publications.</a>
+ #   {% endif %}
+ # 
+ #   {% if person.selected_publications %}
+ #     {% for publication in person.selected_publications %}
+ #       {{ publication }}
+ #     {% endfor %}
+ #   {% endif %}
+ # {% endfor %}
+ # 
+ ##
+- name: Jeff M. Alexander, PhD
+  image: /assets/img/old/
+  degree: PhD in Biomedical Sciences '12, UCSF
+  email: jeffrey.alexander (at) ucsf.edu
+  research_interests: >
+    Spatial regulation of OR genes within the nucleus, epigenetic control of
+    cellular differentiation.
+
+  # At first I wasnt sure the best way to do this, but there is no free form
+  # text on these pages, otherwise they would go in a collection with their
+  # own template.
+
+  # publications: | 
+    # Jeff's <a href="http://www.ncbi.nlm.nih.gov/pubmed?term=Alexander%20JM%5BAuthor%5D&cauthor=true&cauthor_uid=22981692">
+    #   PubMed
+    # </a>
+
+  publications: http://www.ncbi.nlm.nih.gov/pubmed?term=Alexander%20JM%5BAuthor%5D&cauthor=true&cauthor_uid=22981692
+
+- name: Kevin Monahan, PhD
+  image: /assets/img/old/
+  degree: PhD '11, Maniatis Lab, Columbia University
+  email: kevin.monahan (at) ucsf.edu
+  research_interests: ''
+  selected_publications:
+    - >
+       Kehayova, P., Monahan, K., Chen, W., Maniatis, T. (2011). Regulatory
+       elements required for the activation and repression of the
+       protocadherin-{alpha} gene cluster. Proc Natl Acad Sci.
+       108(41):17195-200. PMCID: PMC3193253
+    - >
+       Monahan, K., Rudnick, N.D., Kehayova, P.D., Pauli, F., Newberry, K.M.,
+       Myers, R.M., Maniatis, T. (2012). Role of CCCTC binding factor (CTCF)
+       and cohesin in generation of single-cell diversity of protocadherin-?
+       gene expression. Proc Natl Acad Sci. 2012; 109(23):9125-30. PMCID: PMC3384188
+    - >
+       Guo, Y., Monahan, K., Wu, H., Gertz, J., Varley, K.E., Li, W., Myers,
+       R.M., Maniatis, T., Wu, Q. (2012). CTCF/cohesin-mediated DNA looping is
+       required for protocadherin a promoter choice. Proc Natl Acad Sci.
+       109(51):21081-21086. PMCID: PMC3529044
+- name: Karen Leung, PhD
+  image: /assets/img/old/
+  degree: PhD in Genetics '10, UC Davis
+  email: karen.leung (at) ucsf.edu
+  research_interests: >
+    Understanding chromatin architecture and nuclearorganization as they
+    relate to gene regulation and development.
+  selected_publications:
+    - >
+       109(51):21081-21086. PMCID: PMC3529044
+    - >
+       Leung KN, Vallero RO, DuBose A, Resnick JL, LaSalle JM. 2009.
+       Imprinting regulates mammalian snoRNA-encoding chromatin decondensation
+       and neuronal nucleolar size. Human Molecular Genetics 18(22), 4227-38.
+    - >
+       Hogart A, Leung KN, Wang NJ, Wu DJ, Driscoll J, Vallero RO, Schanen C,
+       Lasalle JM. 2008. Chromosome 15q11-13 duplication syndrome brain
+       reveals epigenetic alterations in gene expression not predicted from
+       copy number. Journal of Medical Genetics 46(2), 86-93.
+    - >
+       Thatcher KN and LaSalle JM. 2006. Dynamic changes in Histone H3 lysine
+       9 acetylation localization patterns during neuronal maturation require
+       MeCP2. Epigenetics 1(1), 24-31.
+    - >
+       Thatcher KN, Peddada S, Yasui DH, and LaSalle JM. 2005. Homologous
+       pairing of 15q11-13 imprinted domains in brain is developmentally
+       regulated but deficient in Rett and autism samples. Human Molecular
+       Genetics 14(6): 785-97.

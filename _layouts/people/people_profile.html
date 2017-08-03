@@ -1,0 +1,21 @@
+---
+layout: has_padded_menu
+###
+ # This profile takes parameters:
+ # 
+ # name: 'This text rendered as given, PhD'
+ # image: /assets/img/place_image_here.jpg
+ # slug: url # this url will be the link under /people/url
+ # 
+ ##
+---
+
+<div class="row">
+  <div class="col-md-3">
+    <img src="{{ page.image }}" width="80%" alt="" class="img-thumbnail" style="margin-top: 15px; margin-left: 15px;">
+  </div>
+  <div class="col-md-9">
+    <h1>{{ page.name }}</h1>
+    {{ content }}
+  </div>
+</div>
