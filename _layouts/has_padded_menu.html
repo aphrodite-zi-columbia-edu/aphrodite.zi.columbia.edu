@@ -1,5 +1,16 @@
 ---
 layout: document
+###
+ # This layout inserts a menu into its parent layout before the content block
+ # of the child layout.
+ # 
+ # It sorts people from `_people/` in a drop down menu (see starting from
+ # "{% assign people ... %}" blocks.
+ # 
+ # It will also pull data from `_data/menus/menu.yaml` in the order it appears
+ # on that list.
+ # 
+ ##
 ---
 <nav class="navbar navbar-default">{% comment %} This part not indented on purpose. {% endcomment %}
         <div class="container-fluid">
@@ -17,7 +28,30 @@ layout: document
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Research</a></li>
+              {% assign menu = site.data.menus.menu %}
+              {% for item in menu %}
+                {% if item.link %}
+              <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+                {% elsif item.children %}
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  {{ item.name }} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                {% for child in item.children %}
+                  {% if child.link %}
+                  <li><a href="/people">{{ child.name }}</a></li>
+                  {% elsif child.separator %}
+                  <li role="separator" class="divider"></li>
+                  {% elsif child.header %}
+                  <li class="dropdown-header">{{ child.header }}</li>
+                  {% endif %}
+                {% endfor %}{% comment %} # for item in menu {% endcomment %}
+                </ul>
+
+                {% endif %}
+              {% endfor %}{% comment %} # for item in menu {% endcomment %}
+              <!-- <li class="active"><a href="#">Research</a></li> -->
               <!-- <li><a href="#">About</a></li> -->
               <!-- <li><a href="#">Contact</a></li> -->
 
@@ -56,7 +90,7 @@ layout: document
                 </ul>
               </li>
 
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   Dropdown <span class="caret"></span>
                 </a>
@@ -69,7 +103,7 @@ layout: document
                   <li><a href="#">Separated link</a></li>
                   <li><a href="#">One more separated link</a></li>
                 </ul>
-              </li>
+              </li> -->
 
             </ul>
             <ul class="nav navbar-nav navbar-right">

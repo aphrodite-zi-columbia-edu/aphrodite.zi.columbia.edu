@@ -1,0 +1,14 @@
+- name: Publications
+  link: /publications
+- name: Research
+  link: /research
+- name: Links
+  link: /links
+# - name: Dropdown
+#   children:
+#     - name: Action
+#       link: '#'
+#     - separator: true
+#     - header: Nav header
+#     - name: Action
+#       link: '#'

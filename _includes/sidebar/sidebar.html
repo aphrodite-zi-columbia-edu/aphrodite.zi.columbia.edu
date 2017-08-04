@@ -1,0 +1,59 @@
+<ul class="nav nav-pills nav-stacked">
+  {% assign menu = site.data.menus.menu %}
+  {% for item in menu %}
+    {% if item.link %}
+  <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+    {% elsif item.children %}
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      {{ item.name }} <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+    {% for child in item.children %}
+      {% if child.link %}
+      <li><a href="/people">{{ child.name }}</a></li>
+      {% elsif child.separator %}
+      <li role="separator" class="divider"></li>
+      {% elsif child.header %}
+      <li class="dropdown-header">{{ child.header }}</li>
+      {% endif %}
+    {% endfor %}{% comment %} # for item in menu {% endcomment %}
+    </ul>
+
+    {% endif %}
+  {% endfor %}{% comment %} # for item in menu {% endcomment %}
+
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      People <span class="caret"></span>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li><a href="/people">People</a></li>
+
+      <li role="separator" class="divider"></li>
+      <li class="dropdown-header">Postdoctoral Fellows</li>
+      {% assign people = site.people | where_exp: "person", "person.layout == 'people/postdoc_fellow'" %}
+      {% assign people = people | sort: 'slug' %}
+      {% for person in people %}
+        <li><a href="{{ person.url }}">{{ person.name }}</a></li>
+      {% endfor %}
+
+      <li role="separator" class="divider"></li>
+      <li class="dropdown-header">Graduate Students</li>
+      {% assign people = site.people | where_exp: "person", "person.layout == 'people/grad_student'" %}
+      {% assign people = people | sort: 'slug' %}
+      {% for person in people %}
+        <li><a href="{{ person.url }}">{{ person.name }}</a></li>
+      {% endfor %}
+
+      <li role="separator" class="divider"></li>
+      <li class="dropdown-header">Research Associates / Other</li>
+      {% assign people = site.people | where_exp: "person", "person.layout == 'people/research_other'" %}
+      {% assign people = people | sort: 'slug' %}
+      {% for person in people %}
+        <li><a href="{{ person.url }}">{{ person.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+</ul>
