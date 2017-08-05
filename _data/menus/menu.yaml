@@ -1,9 +1,14 @@
+###
+ # Try to match link url in name for sidebar/sidemenu.html include.
+ ##
 - name: Publications
   link: /publications
 - name: Research
   link: /research
 - name: Links
   link: /links
+- name: Contact Us
+  link: /contact
 # - name: Dropdown
 #   children:
 #     - name: Action
