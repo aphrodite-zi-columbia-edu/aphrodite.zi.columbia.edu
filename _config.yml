@@ -29,7 +29,11 @@ collections:
     permalink: /:collection/:title/
 
 # Build settings
-markdown: kramdown
+markdown: rdiscount
+# kramdown:
+#   input: GFM
+#   hard_wrap: false
+
 gems:
   - jekyll-feed
   - jekyll-less

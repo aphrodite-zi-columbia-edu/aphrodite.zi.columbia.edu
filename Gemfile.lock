@@ -48,6 +48,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rdiscount (2.2.0.1)
     ref (2.0.0)
     rouge (1.11.1)
     safe_yaml (1.0.4)
@@ -71,6 +72,7 @@ DEPENDENCIES
   jekyll (= 3.3.1)
   jekyll-feed (~> 0.6)
   jekyll-less!
+  rdiscount
   sparrow-jekyll-theme
   therubyracer
 
