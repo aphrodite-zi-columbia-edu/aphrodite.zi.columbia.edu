@@ -1,5 +1,5 @@
 ---
-layout: has_padded_menu
+layout: has_padded_and_sidebar
 permalink: publications/
 ---
 <h1 class="page-header">Selected Publications</h1>
