@@ -1,4 +1,22 @@
-<ul class="nav nav-pills nav-stacked">
+<style>
+  .my-side-menu {
+    list-style: none;
+    padding: 0;
+  }
+</style>
+<script>
+  $(function sidemenuSetCurrentActive() {
+    var current = window.location.href.split('/')[3];
+
+    $('ul.my-side-menu').children().each(function () {
+      var text = $(this).text().toLowerCase();
+      if (current && text.indexOf(current) !== -1) {
+        $(this).toggleClass("active");
+      }
+    });
+  });
+</script>
+<ul class="nav nav-stacked nav-pills my-side-menu">
   {% assign menu = site.data.menus.menu %}
   {% for item in menu %}
     {% if item.link %}
